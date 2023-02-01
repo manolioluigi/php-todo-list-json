@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100vh;
+    background-color: rgb(0, 21, 39);
+    padding: 10px;
+}
+
+.content {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: 100px;
+    color: gray;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+i {
+    cursor: pointer;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.blue-button {
+    background-color: rgb(0, 21, 39);
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.blue-button:hover {
+    background-color: white;
+    color: rgb(0, 21, 39);
+}
