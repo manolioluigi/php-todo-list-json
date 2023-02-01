@@ -1,4 +1,5 @@
 <?php
+
 $file= './data.json';
 $fileContent = file_get_contents('./todolist.json');
 $todoList = json_decode($fileContent);
@@ -10,16 +11,15 @@ if (isset($_POST['newTodo'])) {
         'done' => false,
     ];
     array_push($todoList, $newTodo);
-    print_r($todoList);
     file_put_contents($file, json_encode($todoList));
 //check todo
 } elseif (isset($_POST['checkTodo'])) {
 
     $item = $_POST['checkTodo'];
-    if ($todo_list[$item]->done == true) {
-        $todo_list[$item]->done = false;
+    if ($todoList[$item]->done == true) {
+        $todoList[$item]->done = false;
     } else {
-        $todo_list[$item]->done = true;
+        $todoList[$item]->done = true;
     }
     file_put_contents($file, json_encode($todoList));
 //eliminazione todo
@@ -33,3 +33,5 @@ if (isset($_POST['newTodo'])) {
     header('Content-Type: application/json');
     echo json_encode($todoList);
 }
+
+?>

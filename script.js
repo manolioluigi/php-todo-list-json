@@ -28,7 +28,7 @@ const app = createApp({
         //metodo per rimuovere un todo
         removeTodo(index) {
             const data = {
-                deleteTodo: index
+                removeTodo: index
             }
             axios.post(this.apiURL, data, { headers: { 'Content-Type': 'multipart/form-data' } }).then((response) => {
                 console.log(response.data)
