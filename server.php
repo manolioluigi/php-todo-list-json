@@ -1,7 +1,7 @@
 <?php
 
-$file= './data.json';
-$fileContent = file_get_contents('./todolist.json');
+$file= './todolist.json';
+$fileContent = file_get_contents($file);
 $todoList = json_decode($fileContent);
 
 //creazione nuovo todo
@@ -28,10 +28,8 @@ if (isset($_POST['newTodo'])) {
     $item = $_POST['removeTodo'];
     array_splice($todoList, $item, 1);
     file_put_contents($file, json_encode($todoList));
-} else {
-
+} 
     header('Content-Type: application/json');
     echo json_encode($todoList);
-}
 
 ?>

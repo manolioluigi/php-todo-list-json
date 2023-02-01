@@ -21,8 +21,8 @@ const app = createApp({
                 newTodo: this.newTodo,
             }
             axios.post(this.url, data, { headers: { 'Content-Type': 'multipart/form-data' } }).then((response) => {
-                this.getTodoList();
                 this.newTodo = '';
+                this.todoList = response.data
             })
         },
         //metodo per rimuovere un todo
@@ -30,9 +30,9 @@ const app = createApp({
             const data = {
                 removeTodo: index
             }
-            axios.post(this.apiURL, data, { headers: { 'Content-Type': 'multipart/form-data' } }).then((response) => {
+            axios.post(this.url, data, { headers: { 'Content-Type': 'multipart/form-data' } }).then((response) => {
                 console.log(response.data)
-                this.getTodoList()
+                this.todoList = response.data
             })
 
         },
@@ -41,8 +41,8 @@ const app = createApp({
             const data = {
                 checkTodo: index
             }
-            axios.post(this.apiURL, data, { headers: { 'Content-Type': 'multipart/form-data' } }).then((response) => {
-                this.getTodoList()
+            axios.post(this.url, data, { headers: { 'Content-Type': 'multipart/form-data' } }).then((response) => {
+                this.todoList = response.data
             })
         },
     },
